@@ -35,7 +35,7 @@ const Navbar = () => {
     <header className="text-white relative">
       {/* Top Bar - Animated Disappearance on Scroll */}
       <div
-        className={`bg-gradient-to-r from-green-900 to-green-700 text-gray-200 flex flex-wrap justify-between items-center px-4 md:px-10 py-2 text-sm transition-transform duration-500 ${
+        className={`bg-gradient-to-r from-orange-900 to-orange-700 text-gray-200 flex flex-wrap justify-between items-center px-4 md:px-10 py-2 text-sm transition-transform duration-500 ${
           hideTopBar ? "-translate-y-full" : "translate-y-0"
         } fixed top-0 left-0 w-full z-50`}
       >
@@ -56,7 +56,7 @@ const Navbar = () => {
       <nav>
         <div
           style={{ top: hideTopBar ? "0" : "40px" }}
-          className={`fixed top-0 left-0 w-full bg-gradient-to-r from-green-900 via-green-700 to-green-600 text-gray-100 shadow-md px-4 md:px-10 py-3 flex justify-between items-center transition-all duration-500 z-40`}
+          className={`fixed top-0 left-0 w-full bg-gradient-to-r from-orange-900 via-orange-700 to-orange-600 text-gray-100 shadow-md px-4 md:px-10 py-3 flex justify-between items-center transition-all duration-500 z-40`}
         >
           <div
             className="flex items-center space-x-4 cursor-pointer max-w-[1440px]"
@@ -64,7 +64,7 @@ const Navbar = () => {
           >
             <div className="p-2 rounded-full">
               <img
-                className="h-16 md:h-20 object-cover rounded-2xl shadow-md  active:scale-95"
+                className="h-12 md:h-20 object-cover rounded-2xl shadow-md  active:scale-95"
                 src={navLogo}
                 alt="Envocare"
               />
@@ -72,11 +72,11 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex space-x-8 text-md font-semibold">
+          <div className="hidden lg:flex space-x-8 text-md font-semibold  ">
             {[
+              "HOME",
               "ABOUT US",
-              "PRODUCT",
-              "GALLERY",
+              "SERVICES",
               "PROJECTS",
               "BLOG",
               "CONTACT US",
@@ -95,7 +95,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden">
-            <button onClick={toggleMenu} className="text-green-400 px-3 py-2">
+            <button onClick={toggleMenu} className="text-orange-400 px-3 py-2">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -110,7 +110,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="fixed z-20 top-0 left-0 w-full shadow-md rounded-b-xl bg-gradient-to-b from-green-900 via-green-800 to-green-700 px-4 py-4 lg:hidden space-y-4"
+            className="fixed z-20 top-0 left-0 w-full shadow-md rounded-b-xl bg-gradient-to-b from-orange-900 via-orange-800 to-orange-700 px-4 py-4 lg:hidden space-y-4"
             style={{ marginTop: `${mobileMargin}px` }}
           >
             {[
@@ -127,7 +127,7 @@ const Navbar = () => {
                   navigate(`/${item.toLowerCase().replace(" ", "")}`);
                   toggleMenu();
                 }}
-                className="block w-full text-left text-gray-100 font-semibold p-2 hover:bg-green-600 rounded transition duration-300"
+                className="block w-full text-left text-gray-100 font-semibold p-2 hover:bg-orange-600 rounded transition duration-300"
                 whileHover={{ scale: 1.05 }}
               >
                 {item}
