@@ -13,11 +13,10 @@ const Counter = () => {
 
   return (
     <ContentWrapper>
-      <motion.div className="md:p-8 mt-20" ref={ref}>
-        {/* <div className="bgSvgFlight"></div> */}
-        {/* <div className="bgSvgHotel"></div> */}
+      <motion.div className="md:py-8 mt-20" ref={ref}>
         <div className="bgSvgTrain1"></div>
         <div className="bgSvgTrain2"></div>
+        <div className="bgSvgHotel"></div>
         {/* Animated Counters */}
         <div className="flex flex-wrap justify-around text-center mb-12 gap-8">
           {[
@@ -43,7 +42,7 @@ const Counter = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="flex flex-col items-center bg-white py-6 px-8 rounded-2xl w-40 md:w-50 "
+              className="flex flex-col items-center bg-white py-6 px-8 rounded-full w-40 md:w-50 "
             >
               <div className="w-16 h-16 mb-2">
                 <img

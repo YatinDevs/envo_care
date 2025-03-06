@@ -45,9 +45,9 @@ body {
     rgba(33, 166, 219, 0.9) 100.53%
   );
   border-radius: 50%;
-  position: fixed;
-  top: -53rem;
-  left: -69rem;
+  position: absolute;
+  top: 100rem;
+  left: -120rem;
   transform: translate(50%);
   z-index: -2;
   box-shadow: 2rem 2rem 1px 0 rgba(250, 192, 138, 0.4),
@@ -55,23 +55,23 @@ body {
 }
 
 .bgSvgTrain1 {
-  position: fixed;
+  position: absolute;
   top: -20px;
   width: 100%;
   z-index: -1;
   background: url(https://gos3.ibcdn.com/trains-bg-home-1698304355.png) 0 100%
     no-repeat;
-  height: 500px;
+  height: 1000px;
   background-size: cover;
 }
 .bgSvgTrain2 {
-  position: fixed;
+  position: absolute;
   z-index: -2;
   top: 10px;
   width: 100%;
   background: url(https://gos3.ibcdn.com/bg_light-1668596646.svg) 0 100%
     no-repeat;
-  height: 500px;
+  height: 1000px;
   background-size: cover;
 }
 

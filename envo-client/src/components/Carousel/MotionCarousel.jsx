@@ -9,7 +9,7 @@ const MotionCarousel = ({ images }) => {
         {images.map((item, index) => (
           <div
             key={index}
-            className="relative flex flex-col h-80 w-10 items-center"
+            className="relative flex flex-col h-90 w-10 items-center"
           >
             <img
               src={item.src}

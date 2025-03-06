@@ -33,7 +33,7 @@ function Carousel({ data, loading, endpoint, title }) {
   };
 
   return (
-    <div className="relative w-full ">
+    <div className="relative w-full my-20 ">
       <ContentWrapper className="relative">
         <IoMdArrowBack
           className="carouselLeftNav arrow text-2xl text-black bg-white p-4 w-14 h-14 rounded-full absolute -translate-y-2/4 cursor-pointer z-[2] hidden top-[60%] md:block transition-all hover:scale-110 left-6 shadow-even"
@@ -43,9 +43,12 @@ function Carousel({ data, loading, endpoint, title }) {
           className="carouselRightNav arrow text-2xl text-black bg-white p-4 w-14 h-14 rounded-full absolute -translate-y-2/4 cursor-pointer z-[2] hidden top-[60%] md:block transition-all hover:scale-110 right-6 shadow-even"
           onClick={() => navigation("right")}
         />
-        <h1 className="text-center text-gray-800 text-xs md:text-2xl uppercase m-2 p-2 font-bold pb-[10px] ">
-          Our Clients
-        </h1>
+        <h3 className="font-palanquin my-10 text-center text-2xl md:text-4xl font-bold">
+          Our
+          <span className="bg-gradient-to-r m-2 from-blue-600 to-blue-900 text-transparent bg-clip-text">
+            Clients
+          </span>
+        </h3>
         {!loading ? (
           <div
             className="carouselItems flex gap-2.5 sm:gap-5 py-[10px] mx-auto overflow-x-scroll overflow-y-hidden "
@@ -55,12 +58,12 @@ function Carousel({ data, loading, endpoint, title }) {
               return (
                 <div
                   key={details.name}
-                  className=" w-[80px] md:w-[120px] h-[80px] md:h-[120px] shrink-0 border-none  bg-red-200 rounded-2xl"
+                  className=" w-[150px] md:w-[200px] h-[150px] md:h-[200px] shrink-0 border-none  bg-red-200 rounded-2xl"
                 >
                   <div>
                     <img
                       src={details.src}
-                      className="rounded-2xl w-[80px] md:w-[120px] h-[80px] md:h-[120px]"
+                      className="rounded-2xl w-[150px] md:w-[200px] h-[150px] md:h-[200px]"
                     />
                   </div>
                 </div>

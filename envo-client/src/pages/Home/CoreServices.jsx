@@ -1,25 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
-import MotionCarousel from "@/components/Carousel/MotionCarousel";
-
-import {
-  CIIDCO,
-  DeolaliBoard,
-  ISP,
-  ISRO,
-  Kinfra,
-  MAGNUM,
-  MinistryDef,
-  nskCorp,
-  PWD,
-  ResearchSociety,
-  SMBT,
-  Sula,
-  vikasPrerna,
-  WapcoSs,
-  York,
-} from "../../../public/assets";
-import Carousel from "@/components/Carousel/Carousel";
 
 const coreServices = [
   {
@@ -48,29 +28,11 @@ const coreServices = [
       "Certified safety audits and compliance consulting to meet industrial and environmental regulations.",
   },
 ];
-const images = [
-  { name: "CIIDCO", src: CIIDCO },
-  { name: "DeolaliBoard", src: DeolaliBoard },
-  { name: "ISP", src: ISP },
-  { name: "ISRO", src: ISRO },
-  { name: "Kinfra", src: Kinfra },
-  { name: "MAGNUM", src: MAGNUM },
-  { name: "MinistryDef", src: MinistryDef },
-  { name: "nskCorp", src: nskCorp },
-  { name: "PWD", src: PWD },
-  { name: "ResearchSociety", src: ResearchSociety },
-  { name: "SMBT", src: SMBT },
-  { name: "Sula", src: Sula },
-  { name: "vikasPrerna", src: vikasPrerna },
-  { name: "WapcoSs", src: WapcoSs },
-  { name: "York", src: York },
-];
 const CoreServices = () => {
   return (
     <ContentWrapper>
-      <Carousel data={images} />
       <div className="mt-20 text-gray-700 transition-opacity duration-700 ease-in-out opacity-100 hover:opacity-90">
-        <h3 className="font-palanquin text-center text-2xl md:text-4xl font-bold">
+        <h3 className="font-palanquin my-10 text-center text-2xl md:text-4xl font-bold">
           Our
           <span className="bg-gradient-to-r m-2 from-blue-600 to-blue-900 text-transparent bg-clip-text">
             Core

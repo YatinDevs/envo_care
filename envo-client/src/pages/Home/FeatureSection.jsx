@@ -10,41 +10,7 @@ import { FaRegHandshake, FaTruckMoving } from "react-icons/fa";
 import { RiBuilding2Line } from "react-icons/ri";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import { motion } from "framer-motion";
-import {
-  CIIDCO,
-  DeolaliBoard,
-  ISP,
-  ISRO,
-  Kinfra,
-  MAGNUM,
-  MinistryDef,
-  nskCorp,
-  PWD,
-  ResearchSociety,
-  SMBT,
-  Sula,
-  vikasPrerna,
-  WapcoSs,
-  York,
-} from "../../../public/assets";
 
-const images = [
-  { name: "CIIDCO", src: CIIDCO },
-  { name: "DeolaliBoard", src: DeolaliBoard },
-  { name: "ISP", src: ISP },
-  { name: "ISRO", src: ISRO },
-  { name: "Kinfra", src: Kinfra },
-  { name: "MAGNUM", src: MAGNUM },
-  { name: "MinistryDef", src: MinistryDef },
-  { name: "nskCorp", src: nskCorp },
-  { name: "PWD", src: PWD },
-  { name: "ResearchSociety", src: ResearchSociety },
-  { name: "SMBT", src: SMBT },
-  { name: "Sula", src: Sula },
-  { name: "vikasPrerna", src: vikasPrerna },
-  { name: "WapcoSs", src: WapcoSs },
-  { name: "York", src: York },
-];
 
 const features = [
   {

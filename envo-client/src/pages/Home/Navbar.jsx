@@ -56,13 +56,13 @@ const Navbar = () => {
       <nav>
         <div
           style={{ top: hideTopBar ? "0" : "40px" }}
-          className={`fixed top-0 left-0 w-full bg-gradient-to-r from-orange-900 via-orange-700 to-orange-600 text-gray-100 shadow-md px-4 md:px-10 py-3 flex justify-between items-center transition-all duration-500 z-40`}
+          className={`fixed top-0 rounded-b-full left-0 w-full bg-gradient-to-r from-orange-900 via-orange-700 to-orange-600 text-gray-100 shadow-md px-4 md:px-10 py-3 flex justify-between items-center transition-all duration-500 z-40`}
         >
           <div
             className="flex items-center space-x-4 cursor-pointer max-w-[1440px]"
             onClick={() => navigate(`/`)}
           >
-            <div className="p-2 rounded-full">
+            <div className="p-2 rounded-full mx-10">
               <img
                 className="h-12 md:h-20 object-cover rounded-2xl shadow-md  active:scale-95"
                 src={navLogo}
@@ -72,7 +72,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex space-x-8 text-md font-semibold  ">
+          <div className="hidden lg:flex space-x-8 text-md font-semibold mr-10 ">
             {[
               "HOME",
               "ABOUT US",

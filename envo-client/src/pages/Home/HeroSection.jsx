@@ -1,62 +1,104 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const heroContent = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1553451166-232112bda6f6?q=80&w=2072&auto=format&fit=crop",
+    title: "Innovating a Sustainable Future",
+    description:
+      "At Envocare, we create eco-friendly solutions for wastewater management and sustainable infrastructure.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=2069&auto=format&fit=crop",
+    title: "Revolutionizing Engineering & Environment",
+    description:
+      "We specialize in cutting-edge environmental services, making industries greener and more efficient.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1482440308425-276ad0f28b19?q=80&w=2070&auto=format&fit=crop",
+    title: "Committed to Green Energy Solutions",
+    description:
+      "We provide expert guidance in renewable energy and resource management for a cleaner planet.",
+  },
+];
 
 const HeroSection = () => {
-  const [background, setBackground] = useState(
-    "https://images.unsplash.com/photo-1482440308425-276ad0f28b19?q=80&w=2070&auto=format&fit=crop"
-  );
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const { image, title, description } = heroContent[currentIndex];
 
   useEffect(() => {
-    const images = [
-      "https://images.unsplash.com/photo-1553451166-232112bda6f6?q=80&w=2072&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1482440308425-276ad0f28b19?q=80&w=2070&auto=format&fit=crop",
-    ];
     const interval = setInterval(() => {
-      const randomImage = images[Math.floor(Math.random() * images.length)];
-      setBackground(randomImage);
+      nextImage();
     }, 5000);
-
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]);
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + heroContent.length) % heroContent.length
+    );
+  };
 
   return (
-    <div className="relative shadow-2xl mt-20 w-full h-[500px] md:h-[700px] flex items-center justify-center text-white overflow-hidden">
+    <div className="relative shadow-2xl mt-20 w-full h-[600px] md:h-[700px] flex items-center justify-center text-white overflow-hidden rounded-bl-full md:rounded-b-full">
+      {/* Background Image with Overlay */}
       <motion.div
-        key={background}
+        key={image}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="absolute inset-0 w-full h-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${background})` }}
+        className="  absolute inset-0 w-full h-full bg-cover bg-center before:content-[''] before:absolute before:inset-0 before:bg-black/50"
+        style={{ backgroundImage: `url(${image})` }}
       ></motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-orange-10 via-blue-50 to-orange-900 shadow-2xl"></div>
+      {/* Left Arrow Button */}
+      <button
+        onClick={prevImage}
+        className="hidden md:flex absolute left-52 md:left-20  top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 hover:bg-opacity-75 p-3 rounded-full z-10"
+      >
+        <ChevronLeft className="text-white w-6 h-6" />
+      </button>
 
+      {/* Right Arrow Button */}
+      <button
+        onClick={nextImage}
+        className="hidden md:flex absolute right-52 md:right-20 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 hover:bg-opacity-75 p-3 rounded-full z-10"
+      >
+        <ChevronRight className="text-white w-6 h-6" />
+      </button>
+
+      {/* Text Content with Transitions */}
       <motion.div
         className="relative z-10 text-center max-w-4xl mx-auto px-4"
+        key={title} // Ensures animation re-renders on text change
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <h1 className="text-4xl sm:text-6xl text-gray-800 lg:text-7xl font-bold tracking-wide">
-          ENVOCARE CONSULTING
-          <span className="bg-gradient-to-r m-2 from-orange-600 to-orange-900 text-transparent bg-clip-text">
-            PRIVATE LIMITED
-          </span>
-        </h1>
+        <motion.h1
+          className="text-4xl sm:text-6xl lg:text-6xl font-bold tracking-wide text-white "
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
+          {title}
+        </motion.h1>
         <motion.p
-          className="mt-6 text-lg md:text-xl text-gray-700"
+          className="md:mt-6 text-lg md:text-xl text-gray-200 "
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.3 }}
         >
-          Welcome to Envocare, a leading name in environmental and engineering
-          services. We specialize in sustainable infrastructure solutions,
-          wastewater management, and solid waste treatment, ensuring a greener
-          future for all.
+          {description}
         </motion.p>
-
         <motion.div
           className="mt-8"
           whileHover={{ scale: 1.05 }}

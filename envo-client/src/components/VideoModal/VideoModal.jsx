@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 
-const VideoModal = ({ show, setShow, videoId, setVideoId }) => {
+const VideoModal = ({ show, setShow, videoId }) => {
   const hidePopup = () => {
     setShow(false);
-    setVideoId(null);
   };
+
+  // Unique key to force re-render when modal opens
+  const [playerKey, setPlayerKey] = useState(videoId);
+
+  useEffect(() => {
+    if (show) {
+      setPlayerKey(videoId); // Update key to force re-mount
+    }
+  }, [show, videoId]);
 
   return (
     <div
@@ -35,6 +43,7 @@ const VideoModal = ({ show, setShow, videoId, setVideoId }) => {
 
         {/* Video Player */}
         <ReactPlayer
+          key={playerKey} // Forces re-mount on every modal open
           url={`https://www.youtube.com/watch?v=${videoId}`}
           controls
           width="100%"

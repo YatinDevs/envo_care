@@ -23,7 +23,8 @@ import Sula from "./carousel/Sula.png";
 import vikasPrerna from "./carousel/vikasPrerna.png";
 import WapcoSs from "./carousel/WapcoSs.png";
 import York from "./carousel/York.png";
-
+import thumbnailVideo from "./navbar/tjumbvideo.jpg";
+import star from "./star.svg";
 export {
   CIIDCO,
   DeolaliBoard,
@@ -40,4 +41,6 @@ export {
   vikasPrerna,
   WapcoSs,
   York,
+  thumbnailVideo,
+  star,
 };
