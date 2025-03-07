@@ -8,21 +8,24 @@ import ReviewCard from "./ReviewCard";
 const Testimonials = () => {
   const reviews = [
     {
-      imgURL: "2",
+      imgURL:
+        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       customerName: "Government Project Engineer",
       rating: 4.5,
       feedback:
         "Suviam Infra has been a reliable partner in our irrigation projects. Their RCC pipes are of exceptional quality, and their team ensures timely project execution.",
     },
     {
-      imgURL: "2",
+      imgURL:
+        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       customerName: "Infrastructure Developer",
       rating: 4.5,
       feedback:
         "The attention to detail and the quality of the product exceeded my expectations. Highly recommended!",
     },
     {
-      imgURL: "2",
+      imgURL:
+        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       customerName: "Project Engineer",
       rating: 4.5,
       feedback:
