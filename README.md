@@ -394,3 +394,6 @@ Login with the credentials you just created.
 
   Visit http://127.0.0.1:8000/admin
   Log in with the admin credentials you just created.
+
+- pass : envocare@123
+- user : envocares@gmail.com

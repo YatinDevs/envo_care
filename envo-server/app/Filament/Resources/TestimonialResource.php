@@ -14,7 +14,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
-
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Textarea;
 
 class TestimonialResource extends Resource
 {
