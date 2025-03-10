@@ -24,6 +24,10 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
+            ->brandName('Envocare CMS') 
+            // ->logo(asset('images/envocare-logo.png')) 
+            // ->favicon(asset('images/favicon.ico')) 
+            // ->icon('heroicon-o-home') 
             ->id('admin')
             ->path('admin')
             ->login()

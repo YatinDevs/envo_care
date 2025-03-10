@@ -19,7 +19,9 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 
 class TestimonialResource extends Resource
-{
+{   
+    protected static ?string $navigationGroup = 'HomePage';
+
     protected static ?string $model = Testimonial::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left';
@@ -76,4 +78,5 @@ class TestimonialResource extends Resource
             'edit' => Pages\EditTestimonial::route('/{record}/edit'),
         ];
     }
+    
 }
